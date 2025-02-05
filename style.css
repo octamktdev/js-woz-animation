@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Estrutura geral */
+
+.toggle-wrapper{
+  background-color:#000;
+}
+.mockup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 5rem;
+  }
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 10px;
+  }
+  
+  .chat-toggle-btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.125rem;
+    text-align: left;
+    padding: .75rem;
+    background: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-bottom: solid 1px white;
+    min-height: 6.5rem;
+
+    transition: all .2 ease-in-out;
+  }
+  .chat-toggle-btn:hover{
+    color: #00d2ff;
+    border-bottom: solid 1px #00d2ff;
+  }
+  .chat-toggle-btn:focus{
+    color: #00d2ff;
+    font-weight: bold;
+    border-bottom: solid 1px #00d2ff;
+  }
+
+  .chat-toggle-btn.selected {
+    color: #00d2ff;
+    font-weight: bold;
+    border-bottom: solid 1px #00d2ff;
+  }
+  .mockup {
+    position: relative;
+    width: 380px;
+    height: 675px;
+    background: #000;
+    border-radius: 30px;
+    overflow: hidden;
+  }
+  
+  .mockup-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .screen-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  
+  .screen-content.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .chat-simulator {
+    width: 375px;
+    height: 667px;
+    border-radius: 25px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chat-header {
+    background-color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .chat-header .chat-info h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .chat-header .chat-info p {
+    margin: 5px 0 0;
+    font-size: 12px;
+    color: gray;
+  }
+  
+  .chat-header .chat-actions span {
+    font-size: 14px;
+    color: #007bff;
+    font-weight: bold;
+  }
+  .chat-body {
+    flex: 1;
+    padding: 10px;
+    gap: 10px;
+  
+    height: 400px; 
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: column-reverse; 
+    padding: 10px;
+    background: hsla(0, 0%, 100%, 1);
+    background: linear-gradient(90deg, hsla(0, 0%, 100%, 1) 0%, hsla(292, 36%, 83%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(0, 0%, 100%, 1) 0%, hsla(292, 36%, 83%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(0, 0%, 100%, 1) 0%, hsla(292, 36%, 83%, 1) 100%);
+  }
+  
+  .message {
+    max-width: 70%;
+    padding: 1rem .5rem;
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: 0; 
+    transform: translateY(10px); 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+    margin-bottom: 10px; 
+  }
+  .message.visible {
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+
+  .message-left{
+    align-self: flex-start; 
+    background-color: #EF8BAA;
+    color: #333; 
+    border-radius: 10px 10px 10px 0px; 
+  }
+  .message-right {
+    background: #fff;
+    color: black;
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+    border: 1px solid #988E9B;
+  }
+ /* Tema 1 */
+.theme-btn1 .message-left {
+  background-color: #EF8BAA; /* Verde claro */
+}
+
+.theme-btn1 .message-right {
+  background-color: #fff; /* Verde escuro */
+  color: #000;
+}
+
+/* Tema 2 */
+.theme-btn2 .message-left {
+  background-color: #C3A6C9; /* Vermelho claro */
+}
+
+.theme-btn2 .message-right {
+  background-color: white; /* Vermelho escuro */
+  color: black;
+}
+
+/* Tema 3 */
+.theme-btn3 .message-left {
+  background-color: #C5D5EF; /* Roxo claro */
+}
+
+.theme-btn3 .message-right {
+  background-color: white; /* Roxo escuro */
+  color: black;
+}
+
+/* Tema 4 */
+.theme-btn4 .message-left {
+  background-color: #C8ABF4; /* Azul claro */
+}
+
+.theme-btn4 .message-right {
+  background-color: white; /* Azul escuro */
+  color: black;
+}
+
+  .hidden {
+    display: block; /* Para garantir que eles estejam prontos para animar */
+  }
+  
+  .visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .chat-footer {
+    padding: .5rem;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .chat-footer input {
+    flex: 1;
+    padding: .5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+  }
+  .chat-footer .send-msg-button {
+    background: #5D28B8;
+    display: flex;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+
+
+    img{
+      width: 15px;
+    }
+    }
+  
+  .chat-footer .chat-icons button:hover {
+    color: #007bff;
+  }
+
+  /* Personaliza a barra de rolagem */
+.chat-body::-webkit-scrollbar {
+  display: none;
+  width: 6px; /* Largura da barra */
+  background-color: #f1f1f1; /* Cor de fundo da área da barra */
+  border-radius: 4px;
+}
+
+/* Personaliza o "thumb" da barra */
+.chat-body::-webkit-scrollbar-thumb {
+  background-color: #b0bec5; /* Cor da barra */
+  border-radius: 4px; /* Bordas arredondadas */
+}
+
+/* Efeito ao passar o mouse sobre a barra */
+.chat-body::-webkit-scrollbar-thumb:hover {
+  background-color: #78909c; /* Cor mais escura ao hover */
+}
+
+/* Caso você queira adicionar bordas */
+.chat-body::-webkit-scrollbar-thumb {
+  border: 2px solid #e0f7fa; /* Cor de borda ao redor do thumb */
+}
+.chat-input {
+  font-size: .8em;
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  outline: none;
+  transition: all 0.3s;
+  resize: none; /* Evita redimensionamento manual */
+  overflow-y: auto; /* Ativa rolagem vertical */
+  max-height: 100px; /* Limita a altura máxima */
+  border-radius: .5rem;
+}
+.chat-input::placeholder {
+  color: #999;
+}
