@@ -30,6 +30,7 @@
     cursor: pointer;
     border-bottom: solid 1px white;
     min-height: 6.5rem;
+    width: 60%;
 
     transition: all .2 ease-in-out;
   }
@@ -42,7 +43,6 @@
     font-weight: bold;
     border-bottom: solid 1px #00d2ff;
   }
-
   .chat-toggle-btn.selected {
     color: #00d2ff;
     font-weight: bold;
@@ -56,12 +56,11 @@
     border-radius: 30px;
     overflow: hidden;
   }
-  
   .mockup-screen {
     position: relative;
     width: 100%;
     height: 100%;
-    background: #fff;
+    background: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,36 +87,42 @@
     height: 667px;
     border-radius: 25px;
     overflow: hidden;
-    background: #fff;
     display: flex;
     flex-direction: column;
   }
-  
-  .chat-header {
-    background-color: #fff;
-    padding: 15px;
+  .chat-header{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .chat-header .chat-info h3 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  .chat-header .chat-info p {
-    margin: 5px 0 0;
-    font-size: 12px;
-    color: gray;
-  }
-  
-  .chat-header .chat-actions span {
-    font-size: 14px;
-    color: #007bff;
-    font-weight: bold;
+    padding: 2rem;
+    gap: .25rem;
+    background-color: transparent;
+
+    .first-line img{
+      width: 80px;
+    }
+
+    .second-line{
+      font-family: Poppins, 'sans-serif';
+      font-weight: 800;
+      font-size: 1.5em;
+      text-align: center;
+      line-height: 1em;
+
+      .woz{
+        background: linear-gradient(91deg, #0C7BFF -16.83%, #650EFB 19.22%, #9C0EFD 77.88%, #FB14F3 111.83%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 800;
+
+        .woz-icon{
+          width: 20px;
+        }
+      }
+    }
   }
   .chat-body {
     flex: 1;
@@ -128,11 +133,8 @@
     overflow-y: auto; 
     display: flex;
     flex-direction: column-reverse; 
-    padding: 10px;
-    background: hsla(0, 0%, 100%, 1);
-    background: linear-gradient(90deg, hsla(0, 0%, 100%, 1) 0%, hsla(292, 36%, 83%, 1) 100%);
-    background: -moz-linear-gradient(90deg, hsla(0, 0%, 100%, 1) 0%, hsla(292, 36%, 83%, 1) 100%);
-    background: -webkit-linear-gradient(90deg, hsla(0, 0%, 100%, 1) 0%, hsla(292, 36%, 83%, 1) 100%);
+
+    max-height: calc(70% - 60px); /* 70% da altura menos o espaço do rodapé */
   }
   
   .message {
@@ -151,10 +153,8 @@
     opacity: 1; 
     transform: translateY(0); 
   }
-
   .message-left{
     align-self: flex-start; 
-    background-color: #EF8BAA;
     color: #333; 
     border-radius: 10px 10px 10px 0px; 
   }
@@ -163,47 +163,66 @@
     color: black;
     align-self: flex-end;
     border-bottom-right-radius: 0;
-    border: 1px solid #988E9B;
   }
- /* Tema 1 */
+/* Tema 1 - Roxo */
 .theme-btn1 .message-left {
-  background-color: #EF8BAA; /* Verde claro */
+  background: linear-gradient(0deg, #F9F7FA 0%, #EBDDF4 77.63%)!important;
+  color: black;
 }
 
 .theme-btn1 .message-right {
-  background-color: #fff; /* Verde escuro */
+  background-color: #9612F1;
+  color: white;
+}
+
+.mockup-screen .theme-btn1{
+  background: linear-gradient(0deg, #F9F7FA 0%, #EBDDF4 77.63%)!important;
+}
+
+/* Tema 2 - Azul */
+.theme-btn2 .message-left {
+  background: linear-gradient(0deg, #F9F7FA 0%, #D0DEEE 77.63%)!important;
   color: #000;
 }
 
-/* Tema 2 */
-.theme-btn2 .message-left {
-  background-color: #C3A6C9; /* Vermelho claro */
-}
-
 .theme-btn2 .message-right {
-  background-color: white; /* Vermelho escuro */
-  color: black;
+  background-color: #1366C9;
+  color: white;
 }
 
-/* Tema 3 */
+.theme-btn2 .mockup-screen {
+  background: linear-gradient(0deg, #F9F7FA 0%, #D0DEEE 77.63%)!important;
+}
+
+/* Tema 3 - Laranja */
 .theme-btn3 .message-left {
-  background-color: #C5D5EF; /* Roxo claro */
+  background: linear-gradient(0deg, #F9F7FA 0%, #F2DBE1 77.63%)!important;
+  color: #000;
 }
 
 .theme-btn3 .message-right {
-  background-color: white; /* Roxo escuro */
-  color: black;
+  background-color: #FC3A6A;
+  color: white;
 }
 
-/* Tema 4 */
+.theme-btn3 .mockup-screen{
+  background: linear-gradient(0deg, #F9F7FA 0%, #F2DBE1 77.63%)!important;
+  }
+
+/* Tema 4 - Roxo 2 */
 .theme-btn4 .message-left {
-  background-color: #C8ABF4; /* Azul claro */
+  background: linear-gradient(0deg, #F9F7FA 0%, #EDE2ED 77.63%)!important;
+  color: #000;
 }
 
 .theme-btn4 .message-right {
-  background-color: white; /* Azul escuro */
-  color: black;
+  background-color: #A615A1;
+  color: white;
 }
+
+.theme-btn4 .mockup-screen {
+  background: linear-gradient(0deg, #F9F7FA 0%, #EDE2ED 77.63%)!important;
+  }
 
   .hidden {
     display: block; /* Para garantir que eles estejam prontos para animar */
@@ -216,17 +235,26 @@
 
   .chat-footer {
     padding: .5rem;
-    background-color: #fff;
-    border-top: 1px solid #ddd;
+    background-color: transparent;
     display: flex;
     align-items: center;
     gap: 10px;
+  }
+
+  .chat-footer .typing-area{
+    padding: .5rem;
+    border: 2px solid #ddd;
+    width: 100%;
+
+    border-radius: 1.75rem;
+    display: flex;
+    align-items: center;
   }
   
   .chat-footer input {
     flex: 1;
     padding: .5rem 1rem;
-    border: 1px solid #ddd;
+    border: none;
     border-radius: 1rem;
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
@@ -237,12 +265,10 @@
     justify-content: center;
     border: none;
     cursor: pointer;
-    width: 40px;
+    width: 45px;
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
-
-
     img{
       width: 15px;
     }
@@ -278,16 +304,19 @@
 .chat-input {
   font-size: .8em;
   font-family: 'Poppins', sans-serif;
-  border: 1px solid #ccc;
+  border: none;
   padding: 10px;
   width: 100%;
   outline: none;
   transition: all 0.3s;
   resize: none; /* Evita redimensionamento manual */
   overflow-y: auto; /* Ativa rolagem vertical */
-  max-height: 100px; /* Limita a altura máxima */
   border-radius: .5rem;
 }
 .chat-input::placeholder {
   color: #999;
+}
+
+textarea{
+  height: 20px;
 }
